@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  webapp:
+    build: .
+    container_name: pacifica_webapp
+    restart: unless-stopped
+    volumes:
+      - ./app:/app  # Map โค้ดในเครื่องเข้า container เพื่อให้แก้โค้ดได้ทันที
+    environment:
+      - FLASK_ENV=production
+      - TZ=Asia/Bangkok
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    container_name: pacifica_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80" # Map port 80 ของ RPi ไปที่ port 80 ของ Nginx container
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./app/static:/app/static # ให้ Nginx เข้าถึงไฟล์ static ได้
+    depends_on:
+      - webapp
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logging in...</title>
+</head>
+<body onload="document.forms[0].submit()">
+    <p>Finalizing connection, please wait...</p>
+    
+    <form action="{{ post_url }}" method="post">
+        <input type="hidden" name="username" value="{{ username }}">
+        <input type="hidden" name="password" value="{{ password }}">
+        <input type="hidden" name="magic" value="{{ magic }}">
+        
+        <noscript>
+            <p>Please click the button below to complete login.</p>
+            <input type="submit" value="Continue">
+        </noscript>
+    </form>
+</body>
+</html>

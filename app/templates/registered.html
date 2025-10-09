@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* สไตล์สำหรับกล่องแสดง User/Password */
+    .credential-box {
+        background-color: #f0f2f5;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 25px 0;
+        text-align: left;
+        line-height: 1.8;
+    }
+    .credential-box p {
+        margin: 5px 0;
+    }
+    .credential-box strong {
+        color: #000;
+        word-break: break-all;
+    }
+</style>
+
+<div class="logo">
+    <h1>PACIFICA</h1>
+    <h2>GROUPS</h2>
+</div>
+
+<h3 style="color: green; font-weight: bold; margin-top: 20px;">Registration Successful!</h3>
+<p>Your account has been created. Please use the following credentials to log in.</p>
+
+<div class="credential-box">
+    <p><strong>Username:</strong> {{ username }}</p>
+    <p><strong>Password:</strong> {{ password }}</p>
+</div>
+
+<p>You can now close this tab and log in on the previous page.</p>
+
+<a href="javascript:window.close();" class="btn-primary" style="text-decoration: none; display: block; margin-top: 20px;">Close this window</a>
+
+{% endblock %}
