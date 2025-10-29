@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Pacifica Groups Wi-Fi - Login Failed
+    </title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-container {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+      .logo h1 {
+        font-size: 2.5em;
+        margin: 0;
+        letter-spacing: 2px;
+        color: #1a1a1a;
+      }
+      .logo h2 {
+        font-size: 2.5em;
+        margin: -10px 0 20px 0;
+        color: #bfa75d;
+        font-weight: normal;
+      }
+      .instruction {
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .error-message {
+        color: #d93025;
+        /* สีแดงสำหรับข้อความผิดพลาด */
+        background-color: #fbeae9;
+        border: 1px solid #d93025;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 1em;
+      }
+      .btn-primary {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        background-color: #003366;
+        color: white;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .btn-primary:hover {
+        background-color: #002244;
+      }
+      .register-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .register-link a {
+        font-weight: bold;
+        color: #0056b3;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <h1>
+          PACIFICA
+        </h1>
+        <h2>
+          GROUPS
+        </h2>
+      </div>
+      <p class="instruction">
+        PLEASE SIGN IN FOR INTERNET CONNECTION
+      </p>
+      <div class="error-message">
+        Username หรือ Password ไม่ถูกต้อง
+        <br>
+        กรุณาลองใหม่อีกครั้ง
+      </div>
+      <form action="%%AUTH_POST_URL%%" method="post">
+        <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%">
+        <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%">
+        
+        <input type="text" name="%%USERNAMEID%%" id="ft_un" placeholder="Username" required autocorrect="off" autocapitalize="off">
+        <input type="password" name="%%PASSWORDID%%" id="ft_pd" placeholder="Password" required autocomplete="off">
+        
+        <button type="submit" class="btn-primary">
+          Sign In
+        </button>
+      </form>
+      
+      <div class="register-link">
+        <span>
+          New user? 
+        </span>
+        <a href="http://10.210.1.15/register" target="_blank">
+          Click here to Register
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
